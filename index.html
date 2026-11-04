@@ -1,0 +1,111 @@
+
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#183c2b">
+  <meta name="description" content="Peça os sabores do Tempero da Terra pelo WhatsApp.">
+  <title>Tempero da Terra | Cardápio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css">
+  <script src="/app.js" defer></script>
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#" aria-label="Tempero da Terra, início">
+      <span class="brand-mark" aria-hidden="true">T</span>
+      <span><strong>Tempero da Terra</strong><small>Sabor, carinho e tradição</small></span>
+    </a>
+    <a class="header-order" href="#cardapio">Ver cardápio <span aria-hidden="true">↓</span></a>
+  </header>
+
+  <main>
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <p class="eyebrow"><span class="status-dot"></span> FEITO COM CARINHO, DO NOSSO JEITO</p>
+        <h1 id="hero-title">Comida boa tem<br><em>gosto de casa.</em></h1>
+        <p class="hero-text">Escolha seus favoritos, monte sua sacola e envie seu pedido pra gente pelo WhatsApp.</p>
+        <a class="hero-button" href="#cardapio">Escolher meu pedido <span aria-hidden="true">↗</span></a>
+      </div>
+      <div class="hero-art" aria-hidden="true">
+        <div class="sun"></div>
+        <div class="plate"><span>feito<br>na hora</span></div>
+        <span class="herb herb-one">✳</span><span class="herb herb-two">✳</span>
+        <div class="hero-note">Sabor de<br><strong>comida caseira</strong></div>
+      </div>
+    </section>
+
+    <section class="menu-layout" id="cardapio" aria-label="Cardápio e sacola">
+      <div class="menu-column">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">ESCOLHA SEUS FAVORITOS</p>
+            <h2>Nosso cardápio</h2>
+          </div>
+          <label class="search-box">
+            <span class="search-icon" aria-hidden="true">⌕</span>
+            <span class="sr-only">Buscar no cardápio</span>
+            <input id="menu-search" type="search" placeholder="Buscar item..." autocomplete="off">
+          </label>
+        </div>
+        <nav class="category-nav" id="category-nav" aria-label="Categorias do cardápio"></nav>
+        <div id="menu-items" class="menu-items" aria-live="polite"></div>
+      </div>
+
+      <aside class="cart-panel" id="cart-panel" aria-label="Sua sacola">
+        <div class="cart-heading">
+          <div>
+            <p class="eyebrow">SEU PEDIDO</p>
+            <h2>Sacola <span class="cart-count" id="cart-count">0</span></h2>
+          </div>
+          <button class="cart-toggle" id="cart-toggle" type="button" aria-expanded="false" aria-controls="cart-content">Ver sacola</button>
+        </div>
+        <div class="cart-content" id="cart-content">
+          <div id="cart-items" class="cart-items">
+            <div class="empty-cart">
+              <span class="empty-icon" aria-hidden="true">♧</span>
+              <strong>Sua sacola está vazia</strong>
+              <span>Adicione algo gostoso do cardápio.</span>
+            </div>
+          </div>
+          <div class="cart-summary">
+            <div class="subtotal-row"><span>Subtotal</span><strong id="cart-total">R$ 0,00</strong></div>
+            <p class="payment-note">Entrega e forma de pagamento são combinadas pelo WhatsApp.</p>
+          </div>
+          <form id="checkout-form" class="checkout-form">
+            <label for="customer-name">Seu nome</label>
+            <input id="customer-name" name="name" type="text" placeholder="Como podemos te chamar?" maxlength="60" required>
+            <label for="order-type">Como vai receber?</label>
+            <select id="order-type" name="orderType">
+              <option value="Retirada no local">Retirada no local</option>
+              <option value="Entrega">Entrega</option>
+            </select>
+            <div id="address-field" class="address-field" hidden>
+              <label for="customer-address">Endereço de entrega</label>
+              <input id="customer-address" name="address" type="text" placeholder="Rua, número e bairro" maxlength="160">
+            </div>
+            <label for="order-notes">Observações <span>(opcional)</span></label>
+            <textarea id="order-notes" name="notes" rows="2" maxlength="240" placeholder="Algum detalhe para o pedido?"></textarea>
+            <button class="checkout-button" id="checkout-button" type="submit" disabled>
+              Enviar pedido pelo WhatsApp <span aria-hidden="true">↗</span>
+            </button>
+            <p class="checkout-footnote">O pedido será confirmado pela equipe no WhatsApp.</p>
+          </form>
+        </div>
+      </aside>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <a class="brand footer-brand" href="#">
+      <span class="brand-mark" aria-hidden="true">T</span>
+      <span><strong>Tempero da Terra</strong><small>Sabor, carinho e tradição</small></span>
+    </a>
+    <p>Preços e disponibilidade sujeitos a confirmação.</p>
+  </footer>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+</body>
+</html>
