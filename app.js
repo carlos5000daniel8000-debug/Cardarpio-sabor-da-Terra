@@ -225,6 +225,11 @@ document.querySelector("#order-type").addEventListener("change", (event) => {
   addressInput.required = isDelivery;
 });
 
+document.querySelector("#payment-method").addEventListener("change", (event) => {
+  const cashChangeField = document.querySelector("#cash-change-field");
+  cashChangeField.hidden = event.target.value !== "Espécie";
+});
+
 document.querySelector("#cart-toggle").addEventListener("click", (event) => {
   const isOpen = cartPanel.classList.toggle("is-open");
   event.currentTarget.setAttribute("aria-expanded", String(isOpen));
@@ -238,8 +243,10 @@ document.querySelector("#checkout-form").addEventListener("submit", (event) => {
   const form = new FormData(event.currentTarget);
   const name = String(form.get("name")).trim();
   const orderType = String(form.get("orderType"));
+  const paymentMethod = String(form.get("paymentMethod"));
   const address = String(form.get("address") || "").trim();
-  if (!name || (orderType === "Entrega" && !address)) return;
+  const cashChange = String(form.get("cashChange") || "").trim();
+  if (!name || !paymentMethod || (orderType === "Entrega" && !address)) return;
 
   const orderLines = Array.from(cart.entries()).map(([id, count]) => {
     const product = products.find((item) => item.id === id);
@@ -258,10 +265,12 @@ document.querySelector("#checkout-form").addEventListener("submit", (event) => {
     `Subtotal: ${formatCurrency(total)}`,
     `Nome: ${name}`,
     `Recebimento: ${orderType}`,
+    `Forma de pagamento: ${paymentMethod}`,
+    ...(paymentMethod === "Espécie" && cashChange ? [`Troco para: ${cashChange}`] : []),
     ...(address ? [`Endereço: ${address}`] : []),
     ...(notes ? [`Observações: ${notes}`] : []),
     "",
-    "Por favor, confirme a disponibilidade e me informe as opções para pagamento."
+    "Por favor, confirme a disponibilidade e o recebimento do pedido."
   ].join("\n");
   openWhatsApp(message);
 });

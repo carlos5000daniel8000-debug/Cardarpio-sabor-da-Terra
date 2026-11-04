@@ -73,7 +73,7 @@
           </div>
           <div class="cart-summary">
             <div class="subtotal-row"><span>Subtotal</span><strong id="cart-total">R$ 0,00</strong></div>
-            <p class="payment-note">Entrega e forma de pagamento são combinadas pelo WhatsApp.</p>
+            <p class="payment-note">Escolha como prefere pagar. A equipe confirma o pedido pelo WhatsApp.</p>
           </div>
           <form id="checkout-form" class="checkout-form">
             <label for="customer-name">Seu nome</label>
@@ -86,6 +86,16 @@
             <div id="address-field" class="address-field" hidden>
               <label for="customer-address">Endereço de entrega</label>
               <input id="customer-address" name="address" type="text" placeholder="Rua, número e bairro" maxlength="160">
+            </div>
+            <label for="payment-method">Forma de pagamento</label>
+            <select id="payment-method" name="paymentMethod" required>
+              <option value="PIX">PIX</option>
+              <option value="Cartão">Cartão</option>
+              <option value="Espécie">Espécie</option>
+            </select>
+            <div id="cash-change-field" class="cash-change-field" hidden>
+              <label for="cash-change">Precisa de troco? <span>(opcional)</span></label>
+              <input id="cash-change" name="cashChange" type="text" inputmode="decimal" placeholder="Troco para quanto?">
             </div>
             <label for="order-notes">Observações <span>(opcional)</span></label>
             <textarea id="order-notes" name="notes" rows="2" maxlength="240" placeholder="Algum detalhe para o pedido?"></textarea>

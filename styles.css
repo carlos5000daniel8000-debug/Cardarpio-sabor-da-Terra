@@ -114,7 +114,7 @@ h1 em { color: #dec99e; font-weight: 600; }
 .checkout-form input, .checkout-form select, .checkout-form textarea { width: 100%; padding: 10px; border: 1px solid #e7e1d5; border-radius: 4px; outline: 0; color: var(--ink); background: #fffefa; font-size: 11px; }
 .checkout-form input:focus, .checkout-form select:focus, .checkout-form textarea:focus { border-color: #7d9a7e; box-shadow: 0 0 0 2px rgba(57,112,75,.1); }
 .checkout-form textarea { resize: vertical; }
-.address-field[hidden] { display: none; }
+.address-field[hidden], .cash-change-field[hidden] { display: none; }
 .checkout-button { display: flex; min-height: 44px; justify-content: center; align-items: center; gap: 12px; margin-top: 5px; padding: 9px 10px; border: 0; border-radius: 4px; color: #fff; background: var(--whatsapp); font-size: 11px; font-weight: 700; transition: background .2s; }
 .checkout-button:hover:not(:disabled) { background: #195f37; }
 .checkout-button:disabled { cursor: not-allowed; opacity: .48; }
