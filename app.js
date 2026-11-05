@@ -29,7 +29,7 @@ const menu = [
     ["Pipos — milho, churrasco, cachorro-quente, queijo ou pizza", 5],
     ["Karitó — doce ou salgada", 2], ["Trix — cebola, galinha, queijo ou churrasco", 3],
     ["Reizinho — requeijão, queijo, cebola ou churrasco", 3],
-    ["Reizinho salgado — pizza, queijo ou churrasco", 3], ["Scrusch de batata", 3]
+    ["Reizinho salgado — pizza, queijo ou churrasco", 3], ["Scrusch de batata", 3], ["Pipoca kro", 3]
   ]},
   { category: "Biscoitos e bolachas", items: [
     ["Biscoito recheado — morango ou chocolate", 2.5], ["Wafer", 2.5], ["Passatempo", 5],
@@ -37,7 +37,7 @@ const menu = [
   ]},
   { category: "Doces e guloseimas", items: [
     ["Mentos", 3], ["Jujuba", 1.5], ["Trident", 2.5], ["Halls", 1.5], ["Sonho de Valsa", 1.5],
-    ["Paçoca", 0.5], ["Doce de amendoim tipo Molecão", 2], ["Doce de goiabada", 2], ["Cocada de coco", 2]
+    ["Paçoca", 0.5], ["Doce de amendoim tipo Molecão", 2], ["Doce de goiabada", 2], ["Cocada de coco", 2], ["Prestígio", 4], ["Trufa", 3], ["Batom", 2], ["Caixa chocolate garoto", 15], ["Pelota POP", 0.5], ["Pelotão", 1]
   ]},
   { category: "Sucos", note: "Sabores sujeitos à disponibilidade.", items: [
     ["Suco — laranja, maracujá, caju ou goiaba", 5]
@@ -46,7 +46,7 @@ const menu = [
     ["Refrigerante lata", 5], ["Guaraná pequeno", 3], ["Guaraná 1 litro", 7], ["Guaraná 2 litros", 12],
     ["Coca-Cola KS (vidro)", 5], ["Coca-Cola 1 litro (descartável)", 10],
     ["Coca-Cola 2 litros (descartável)", 12], ["Coca-Cola 2 litros (retornável)", 8],
-    ["Fanta 2 litros", 11], ["Fanta pequena — preço a confirmar", null], ["Kapo", 4], ["Todynho", 3.5],
+    ["Fanta 2 litros", 11], ["Fanta pequena — preço a confirmar", null], ["Energético", 11], ["Kapo", 4], ["Todynho", 3.5],
     ["Citrus", 4], ["Skinka", 5], ["Suco Del Valle de laranja", 10], ["Água sem gás", 2],
     ["Água com gás", 3], ["Água mineral 1,5 litro", 5], ["Coco", 4], ["Guaracoco", 5],
     ["Leite fermentado", 2], ["Iogurte grande", 8], ["Iogurte pequeno", 4], ["Iogurte de copo", 5]
