@@ -73,6 +73,12 @@ public final class LanchoneteServer {
         if (path.endsWith(".js")) {
             return "application/javascript; charset=utf-8";
         }
+        if (path.endsWith(".png")) {
+            return "image/png";
+        }
+        if (path.endsWith(".webmanifest")) {
+            return "application/manifest+json; charset=utf-8";
+        }
         if (path.endsWith(".svg")) {
             return "image/svg+xml";
         }
