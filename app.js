@@ -97,7 +97,9 @@ function renderMenu() {
     const matchesSearch = `${product.name} ${group.category}`.toLocaleLowerCase("pt-BR").includes(query);
     if (!matchesCategory || !matchesSearch) return "";
     const priceText = product.price === null ? "Preço a confirmar" : formatCurrency(product.price);
-    const button = product.price === null
+    const button = group.category === "Comidas regionais"
+      ? `<button class="add-button consult-button availability-button" type="button" data-availability="${escapeHtml(product.id)}">Verificar disponibilidade</button>`
+      : product.price === null
       ? `<button class="add-button consult-button" type="button" data-consult="${escapeHtml(product.id)}">Consultar</button>`
       : `<button class="add-button" type="button" data-add="${escapeHtml(product.id)}" aria-label="Adicionar ${escapeHtml(product.name)} à sacola">+</button>`;
     return `
@@ -189,6 +191,7 @@ document.querySelector("#menu-search").addEventListener("input", renderMenu);
 menuContainer.addEventListener("click", (event) => {
   const addButton = event.target.closest("[data-add]");
   const consultButton = event.target.closest("[data-consult]");
+  const availabilityButton = event.target.closest("[data-availability]");
   if (addButton) {
     const id = addButton.dataset.add;
     cart.set(id, (cart.get(id) || 0) + 1);
@@ -198,6 +201,10 @@ menuContainer.addEventListener("click", (event) => {
   if (consultButton) {
     const product = products.find((item) => item.id === consultButton.dataset.consult);
     openWhatsApp(`Olá! Gostaria de confirmar o preço e a disponibilidade de: ${product.name}.`);
+  }
+  if (availabilityButton) {
+    const product = products.find((item) => item.id === availabilityButton.dataset.availability);
+    openWhatsApp(`Olá! Gostaria de verificar a disponibilidade de: ${product.name}.`);
   }
 });
 
@@ -217,14 +224,6 @@ cartItems.addEventListener("click", (event) => {
   renderCart();
 });
 
-document.querySelector("#order-type").addEventListener("change", (event) => {
-  const addressField = document.querySelector("#address-field");
-  const addressInput = document.querySelector("#customer-address");
-  const isDelivery = event.target.value === "Entrega";
-  addressField.hidden = !isDelivery;
-  addressInput.required = isDelivery;
-});
-
 document.querySelector("#payment-method").addEventListener("change", (event) => {
   const cashChangeField = document.querySelector("#cash-change-field");
   cashChangeField.hidden = event.target.value !== "Espécie";
@@ -242,11 +241,9 @@ document.querySelector("#checkout-form").addEventListener("submit", (event) => {
 
   const form = new FormData(event.currentTarget);
   const name = String(form.get("name")).trim();
-  const orderType = String(form.get("orderType"));
   const paymentMethod = String(form.get("paymentMethod"));
-  const address = String(form.get("address") || "").trim();
   const cashChange = String(form.get("cashChange") || "").trim();
-  if (!name || !paymentMethod || (orderType === "Entrega" && !address)) return;
+  if (!name || !paymentMethod) return;
 
   const orderLines = Array.from(cart.entries()).map(([id, count]) => {
     const product = products.find((item) => item.id === id);
@@ -264,10 +261,9 @@ document.querySelector("#checkout-form").addEventListener("submit", (event) => {
     "",
     `Subtotal: ${formatCurrency(total)}`,
     `Nome: ${name}`,
-    `Recebimento: ${orderType}`,
+    "Recebimento: Retirada no local",
     `Forma de pagamento: ${paymentMethod}`,
     ...(paymentMethod === "Espécie" && cashChange ? [`Troco para: ${cashChange}`] : []),
-    ...(address ? [`Endereço: ${address}`] : []),
     ...(notes ? [`Observações: ${notes}`] : []),
     "",
     "Por favor, confirme a disponibilidade e o recebimento do pedido."
