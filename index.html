@@ -73,20 +73,11 @@
           </div>
           <div class="cart-summary">
             <div class="subtotal-row"><span>Subtotal</span><strong id="cart-total">R$ 0,00</strong></div>
-            <p class="payment-note">Escolha como prefere pagar. A equipe confirma o pedido pelo WhatsApp.</p>
+            <p class="payment-note">Pedidos para retirada no local. Escolha como prefere pagar e confirme pelo WhatsApp.</p>
           </div>
           <form id="checkout-form" class="checkout-form">
             <label for="customer-name">Seu nome</label>
             <input id="customer-name" name="name" type="text" placeholder="Como podemos te chamar?" maxlength="60" required>
-            <label for="order-type">Como vai receber?</label>
-            <select id="order-type" name="orderType">
-              <option value="Retirada no local">Retirada no local</option>
-              <option value="Entrega">Entrega</option>
-            </select>
-            <div id="address-field" class="address-field" hidden>
-              <label for="customer-address">Endereço de entrega</label>
-              <input id="customer-address" name="address" type="text" placeholder="Rua, número e bairro" maxlength="160">
-            </div>
             <label for="payment-method">Forma de pagamento</label>
             <select id="payment-method" name="paymentMethod" required>
               <option value="PIX">PIX</option>
