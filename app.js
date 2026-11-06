@@ -104,7 +104,7 @@ function renderMenu() {
       <article class="product-card">
         <div>
           <div class="product-category">${escapeHtml(group.category)}</div>
-          <h3 class="product-name">${escapeHtml(product.name)}</h3>
+          <h3 class="product-name">${escapeHtml(product.name)}</h3>           ${group.note ? `<p class="product-note">${escapeHtml(group.note)}</p>` : ""}
         </div>
         <div class="product-bottom">
           <span class="product-price">${priceText}</span>
