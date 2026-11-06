@@ -14,7 +14,7 @@ const menu = [
     ["Cachorro-quente", 7], ["Pastel de carne", 4], ["Pastel de frango", 4],
     ["Pastel misto", 4], ["Pastel de queijo", 4], ["Pastel de forno", 4], ["Coxinha", 4]
   ]},
-  { category: "Comidas regionais", note: "Pratos sujeitos à disponibilidade do dia.", items: [
+  { category: "Comidas regionais", note: "Verificar disponibilidade", items: [
     ["Torta salgada", 9], ["Macaxeira com costela", 12], ["Inhame com costela", 12],
     ["Inhame com carne guisada", 12], ["Macaxeira com bode", 14], ["Inhame com bode", 14],
     ["Arrumadinho", 14], ["Arroz de festa com galinha", 14]
@@ -48,7 +48,7 @@ const menu = [
     ["Coca-Cola 2 litros (descartável)", 12], ["Coca-Cola 2 litros (retornável)", 8],
     ["Fanta 2 litros", 11], ["Fanta pequena — preço a confirmar", null], ["Energético", 11], ["Kapo", 4], ["Todynho", 3.5],
     ["Citrus", 4], ["Skinka", 5], ["Suco Del Valle de laranja", 10], ["Água sem gás", 2],
-    ["Água com gás", 3], ["Água mineral 1,5 litro", 5], ["Coco", 4], ["Guaracoco", 5],
+    ["Água com gás", 3], ["Água mineral 1,5 litro", 7], ["Coco", 4], ["Guaracoco", 5],
     ["Leite fermentado", 2], ["Iogurte grande", 8], ["Iogurte pequeno", 4], ["Iogurte de copo", 5]
   ]},
   { category: "Queijos e castanhas", items: [
