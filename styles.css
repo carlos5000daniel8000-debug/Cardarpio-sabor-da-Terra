@@ -86,6 +86,7 @@ h1 em { color: #dec99e; font-weight: 600; }
 .add-button { min-width: 30px; min-height: 30px; padding: 0 9px; border: 1px solid #d5dfd1; border-radius: 4px; color: var(--forest); background: #f3f6f0; font-size: 18px; line-height: 1; transition: .2s; }
 .add-button:hover { border-color: var(--forest); color: #fff; background: var(--forest); }
 .add-button.consult-button { padding: 0 9px; font-size: 10px; font-weight: 700; }
+.add-button.availability-button { padding: 0 8px; font-size: 9px; }
 .empty-results { grid-column: 1 / -1; padding: 30px; border: 1px dashed var(--sand); border-radius: 5px; color: var(--muted); font-size: 13px; text-align: center; }
 
 .cart-panel { position: sticky; top: 20px; padding: 20px; border: 1px solid #e8e1d3; border-radius: 6px; background: var(--paper); box-shadow: 0 10px 30px rgba(33,50,38,.04); }
@@ -114,7 +115,7 @@ h1 em { color: #dec99e; font-weight: 600; }
 .checkout-form input, .checkout-form select, .checkout-form textarea { width: 100%; padding: 10px; border: 1px solid #e7e1d5; border-radius: 4px; outline: 0; color: var(--ink); background: #fffefa; font-size: 11px; }
 .checkout-form input:focus, .checkout-form select:focus, .checkout-form textarea:focus { border-color: #7d9a7e; box-shadow: 0 0 0 2px rgba(57,112,75,.1); }
 .checkout-form textarea { resize: vertical; }
-.address-field[hidden], .cash-change-field[hidden] { display: none; }
+.cash-change-field[hidden] { display: none; }
 .checkout-button { display: flex; min-height: 44px; justify-content: center; align-items: center; gap: 12px; margin-top: 5px; padding: 9px 10px; border: 0; border-radius: 4px; color: #fff; background: var(--whatsapp); font-size: 11px; font-weight: 700; transition: background .2s; }
 .checkout-button:hover:not(:disabled) { background: #195f37; }
 .checkout-button:disabled { cursor: not-allowed; opacity: .48; }
