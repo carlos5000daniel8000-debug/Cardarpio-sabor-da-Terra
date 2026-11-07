@@ -1,0 +1,10 @@
+[
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "br.com.temperodaterra",
+      "sha256_cert_fingerprints": ["B6:6D:12:EE:23:AA:62:19:4E:13:2F:19:90:01:5E:B5:D9:F6:69:34:3B:7E:26:CC:3D:E3:AF:BA:5E:1E:F1:98"]
+    }
+  }
+]
