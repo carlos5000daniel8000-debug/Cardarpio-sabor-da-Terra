@@ -2,6 +2,6 @@ services:
   - type: web
     name: tempero-da-terra
     runtime: static
-    buildCommand: mkdir -p dist/icons && cp index.html styles.css app.js manifest.webmanifest service-worker.js dist/ && cp icons/* dist/icons/
+    buildCommand: mkdir -p dist/icons dist/.well-known && cp index.html styles.css app.js manifest.webmanifest service-worker.js dist/ && cp icons/* dist/icons/ && cp .well-known/assetlinks.json dist/.well-known/assetlinks.json
     staticPublishPath: ./dist
     autoDeploy: true
